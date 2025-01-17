@@ -1,7 +1,3 @@
-# SdfSampler
-Tool to sample SDFs for DeepSDF
-## Example Use
-```
 from SdfSampler.sdf_sampler import SDFSampler, BoxSDF
 import numpy as np
 sampler = SDFSampler(outdir="test_dir", splitdir="test_split")
@@ -12,13 +8,3 @@ sdfs = [
 ]
 split_files = sampler.sample_sdfs(sdfs, data_set_info)
 sampler.write_json("example_split.json", data_set_info, split_files)
-```
-## Installation
-To install SdfSampler run
-```
-pip install -e .
-```
-To install additional developer dependencies run
-```
-pip install -e ".[develop]"
-```

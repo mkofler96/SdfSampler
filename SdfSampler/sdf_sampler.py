@@ -193,6 +193,8 @@ class SDFSampler:
             data_info["dataset_name"]: {data_info["class_name"]: split_files}
         }
         json_fname = pathlib.Path(f"{self.splitdir}/{json_fname}")
+        if not os.path.isdir(json_fname.parent):
+            os.makedirs(json_fname.parent)
         print("saving json")
         json.dump(json_content, open(json_fname, "w"), indent=4)
 
